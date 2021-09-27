@@ -35,12 +35,12 @@ men også tilfeldige personer (dvs. tilfeldige bilder av personer).-->
         function setImage(){
             for(var i = 0; i < randomNumber; i++){
 
-                if(randomNumber <= 50){
-                image = "person1.jpg"
-            }   else{
-                image = "person2.jpg"
+            if(randomNumber <= 50){
+                image = "person1.jpg" && "person3.jpg"
+            }else{
+                image = "person2.jpg" && "person4.jpg"
             }
-                outputDiv.innerHTML += `<img src="images/${image}">`;
+            outputDiv.innerHTML += `<img src="images/${image}">`;
             }
         }
         
