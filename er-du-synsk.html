@@ -73,6 +73,7 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         // Variabler
         var randomNumber;
         var image = `<img src="images/person1.jpg">`;
+        var newLife = false;
        // var numberOfLivesDiv = 5; //Liv brukeren spiller med.
         var countRight = 0; //Brukeren starter med å ha gjettet null ganger.
         var countWrong = 0;
@@ -110,23 +111,28 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         }
       };
 
-      
+      /*
       //Bilder som representerer liv igjen.
       function livesFunction(){
           numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
-        }
+        }*/
 
         //Hvis brukeren kommer opp i 3, 5, og 7 poeng skal brukeren få 1 liv ekstra
-        while(numberOfRightAnswersDiv == 3 || numberOfRightAnswersDiv == 5 || numberOfRightAnswersDiv == 7){
-            numberOfLivesDiv.innerHTML += `${image}`;
-        }
+        while(newLife === false){
+            numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
+            if(numberOfRightAnswersDiv == 3 || numberOfRightAnswersDiv == 5 || numberOfRightAnswersDiv == 7){
+                newLife === true;
+                numberOfRightAnswersDiv.innerHTML += `${image}`;
+            }
+        }; //denne løkken funker ikke, siden vil ikke laste inn
+        
         
       //Hovedfunksjon som kjøres ved event.
       function gatherFunctions(){
             setRandomNumber();
             spanOneFunction();
             spanTwoFunction();
-            livesFunction();
+           // livesFunction();
         };
       // Events
 
