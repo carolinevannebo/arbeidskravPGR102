@@ -46,6 +46,8 @@ Gi kommentarer skriftlig til en eller to medstudenter du ikke har jobbet med på
 Du skal levere både kommentarene du har fått og gitt. Denne teksten kan enten være i et eget tekstdokument, eller som tekst i en HTML-fil. 
 Tekstlengde på kommentarene du gir bør være i hvert fall 100 ord og bør inneholde i hvert fall 2 ting du synes ser bra ut og 2 ting du mener kan forbedres. 
 Temaer: ryddighet, variabelnavn,retningslinjer, funksjonsnavn, koderepetisjon osv.
+
+
 Hovedtask – Er du synsk?
 Dette er et spill hvor brukeren må gjette hvilken av to bokser som er den riktige. Skjermbilder er inkludert på de neste sidene for lettere forstå hvordan spillet fungerer. 
 
