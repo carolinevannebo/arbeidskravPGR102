@@ -36,7 +36,12 @@ men også tilfeldige personer (dvs. tilfeldige bilder av personer).-->
                 outputDiv.innerHTML += `<img src="images/person1.jpg">`;
             }
         }
+        
+        function clearSite(){
+            outputDiv.innerHTML = "";
+        }
 
+        addImagesBtn.addEventListener("click", clearSite);
         addImagesBtn.addEventListener("click", setRandomNumber);
         addImagesBtn.addEventListener("click", setImage);
     </script>
