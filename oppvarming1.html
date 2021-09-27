@@ -14,15 +14,27 @@
     <div id="output-div"></div>
 
     <script>
-    var addImagesBtn = document.getElementById("add-images-btn");
-    var imagesSpan = document.getElementById("number-of-images-span");
-    var outputDiv = document.getElementById("output-div");
+        const addImagesBtn = document.getElementById("add-images-btn");
+        const imagesSpan = document.getElementById("number-of-images-span");
+        const outputDiv = document.getElementById("output-div");
 
-    addImagesBtn.onclick = randomPhotos
+        function getRandomPositiveInt(max) {
+            return Math.floor(Math.random() * max + 1);
+        }
 
-    function randomPhotos(){
+        function randomPhotos(){
+            outputDiv.innerHTML = '';
+            const numberOfImages = getRandomPositiveInt(100);
+            imagesSpan.innerHTML = numberOfImages;
 
-    }
+            for (let i = 0; i < numberOfImages; i++ ){
+                const imageName = `images/person${getRandomPositiveInt(4)}.jpg`;
+                outputDiv.innerHTML += `<img src='${imageName}'>`
+            }
+
+        }
+
+        addImagesBtn.addEventListener('click', randomPhotos);
     </script>
 
 </body>
