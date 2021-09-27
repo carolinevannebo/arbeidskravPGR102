@@ -13,16 +13,32 @@
     <p>Antall bilder: <span id="number-of-images-span">0</span></p>
     <div id="output-div"></div>
 
+    <!--Oppvarmingstask 1
+Hver gang bruker klikker på knappen skal et tilfeldig antall bilder mellom 1 og 100 skrives ut. 
+Når bruker klikker på knappen igjen må man først fjerne de som ble lagt til forrige gang, 
+og så legge til nytt tilfeldig antall bilder. Valgfri utvidelse: skriv ikke bare ut tilfeldig antall bilder, 
+men også tilfeldige personer (dvs. tilfeldige bilder av personer).-->
+
     <script>
-    var addImagesBtn = document.getElementById("add-images-btn");
-    var imagesSpan = document.getElementById("number-of-images-span");
-    var outputDiv = document.getElementById("output-div");
+        var addImagesBtn = document.getElementById("add-images-btn");
+        var imagesSpan = document.getElementById("number-of-images-span");
+        var outputDiv = document.getElementById("output-div");
 
-    addImagesBtn.onclick = randomPhotos
+        var randomNumber;
 
-    function randomPhotos(){
+        function setRandomNumber(){
+            randomNumber = Math.floor(Math.random() * 100 + 1); //siden tallet begynner på 0, legger vi til +1
+            imagesSpan.innerHTML = randomNumber;
+        }
 
-    }
+        function setImage(){
+            for(var i = 0; i < randomNumber; i++){
+                outputDiv.innerHTML += `<img src="images/person1.jpg">`;
+            }
+        }
+
+        addImagesBtn.addEventListener("click", setRandomNumber);
+        addImagesBtn.addEventListener("click", setImage);
     </script>
 
 </body>
