@@ -25,7 +25,6 @@ men også tilfeldige personer (dvs. tilfeldige bilder av personer).-->
         var outputDiv = document.getElementById("output-div");
 
         var randomNumber;
-        //var image;
 
         function setRandomNumber(){
             randomNumber = Math.floor(Math.random() * 100 + 1); //siden tallet begynner på 0, legger vi til +1
@@ -36,11 +35,6 @@ men også tilfeldige personer (dvs. tilfeldige bilder av personer).-->
             for(var i = 0; i < randomNumber; i++){
 
             imgNumber = Math.floor(Math.random() * 4 + 1);
-           /* if(randomNumber <= 50){
-                image = "person1.jpg"
-            }else{
-                image = "person2.jpg"
-            }*/
             outputDiv.innerHTML += `<img src="images/person${imgNumber}.jpg">`;
             }
         }
