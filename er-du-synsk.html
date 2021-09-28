@@ -111,12 +111,12 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         }
       };
 
-      /*
+      
       //Bilder som representerer liv igjen.
       function livesFunction(){
           numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
-        }*/
-
+        }
+/*
         //Hvis brukeren kommer opp i 3, 5, og 7 poeng skal brukeren få 1 liv ekstra
         while(newLife === false){
             numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
@@ -125,14 +125,14 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
                 numberOfRightAnswersDiv.innerHTML += `${image}`;
             }
         }; //denne løkken funker ikke, siden vil ikke laste inn
-        
+        */
         
       //Hovedfunksjon som kjøres ved event.
       function gatherFunctions(){
             setRandomNumber();
             spanOneFunction();
             spanTwoFunction();
-           // livesFunction();
+            livesFunction();
         };
       // Events
 
