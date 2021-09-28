@@ -66,8 +66,8 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         var boxOneDiv = document.getElementById("box1-div");
         var boxTwoDiv = document.getElementById("box2-div");
         var numberOfLivesDiv = document.getElementById("number-of-lives-div");
-        var numberOfRightAnswersDiv = document.getElementById("number-of-right-answers-div");
-        var numberOfWrongAnswersDiv = document.getElementById("number-of-wrong-answers");
+        //var numberOfRightAnswersDiv = document.getElementById("number-of-right-answers-div");
+        //var numberOfWrongAnswersDiv = document.getElementById("number-of-wrong-answers");
         var numberOfRightAnswersP = document.getElementById("number-of-right-answers-p");
         var numberOfWrongAnswersP = document.getElementById("number-of-wrong-answers-p");
         var outputDiv = document.getElementById("output-div");
@@ -85,30 +85,19 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
 
         //Setter en av de to boksene tilfeldig som den riktige.
         function setRandomNumber(){
-            var randomNumber = Math.floor(Math.random() * 2 + 1);
+            randomNumber = Math.floor(Math.random() * 2 + 1);
         };
 
         //Brukeren klikker på en av boksene og det sjekkes om boksen er den riktige.
         function spanOneFunction(){
         if(randomNumber === 1){
-            numberOfRightAnswersP.innerHTML = `Antall riktige: ${countRight + 1}`;
+            numberOfRightAnswersP.innerHTML = `Antall riktige: ${countRight++}`;
           //  numberOfLivesDiv + 1;
-        }else if(randomNumber === 2){
-            numberOfWrongAnswersP.innerHTML = `Antall feil: ${countWrong + 1}`;
+        }else{
+            numberOfWrongAnswersP.innerHTML = `Antall feil: ${countWrong++}`;
            // numberOfLivesDiv - 1;
         }
       };
-
-      function spanTwoFunction(){
-        if(randomNumber === 2){
-            numberOfRightAnswersP.innerHTML = `Antall riktige: ${countRight + 1}`;
-          //  numberOfLivesDiv ++;
-        }else if(randomNumber === 1){
-            numberOfWrongAnswersP.innerHTML = `Antall feil: ${countWrong + 1}`;
-           // numberOfLivesDiv - 1;
-        }
-      };
-
       
       //Bilder som representerer liv igjen.
       function livesFunction(){
@@ -125,19 +114,17 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         }; //denne løkken funker ikke, siden vil ikke laste inn
         */
         
-      //Hovedfunksjon som kjøres ved event.
-      function gatherFunctions(){
+    //Hovedfunksjon som kjøres ved event.
+    function gatherFunctions(){
             setRandomNumber();
-            spanOneFunction();
-            spanTwoFunction();
             livesFunction();
+            spanOneFunction();
         };
       // Events
 
       //To click events for å kjøre hovedfunksjon.
-      boxOneDiv.onclick = gatherFunctions;
-      boxTwoDiv.onclick = gatherFunctions;
-
+      boxOneDiv.addEventListener("click", gatherFunctions)
+      boxTwoDiv.addEventListener("click", gatherFunctions)
 
     </script>
 
