@@ -76,7 +76,7 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         var randomNumber;
         var image = `<img src="images/person1.jpg">`;
         //var newLife = false;
-        //var numberOfLivesDiv = 5; //Liv brukeren spiller med.
+        var numberOfLivesDiv; //Liv brukeren spiller med.
         var countRight = 0; //Brukeren starter med å ha gjettet null ganger.
         var countWrong = 0;
 
@@ -89,22 +89,28 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         };
 
         //Brukeren klikker på en av boksene og det sjekkes om boksen er den riktige.
-        function spanOneFunction(){
+        function spanFunction(){
         if(randomNumber === 1){
             numberOfRightAnswersP.innerHTML = `Antall riktige: ${countRight++}`;
-          //  numberOfLivesDiv + 1;
         }else{
             numberOfWrongAnswersP.innerHTML = `Antall feil: ${countWrong++}`;
-           // numberOfLivesDiv - 1;
         }
       };
       
-      //Bilder som representerer liv igjen.
-      function livesFunction(){
-          numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
-        }
+    //Hvor mange liv personen har igjen
+    function livesFunction(){
+        numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
+        if(countRight >= 3){ // denne legger til, men ikke etter 3 riktige forsøk >:()
+          numberOfLivesDiv.innerHTML += `${image}`;
+      }/*else if(countWrong++){
+          numberOfLivesDiv.innerHTML -= `${image}`;
+      }*/
+    };
+    
+    //Hvis brukeren kommer opp i 3, 5, og 7 poeng skal brukeren få 1 liv ekstra.
+
+    
 /*
-        //Hvis brukeren kommer opp i 3, 5, og 7 poeng skal brukeren få 1 liv ekstra
         while(newLife === false){
             numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
             if(numberOfRightAnswersDiv == 3 || numberOfRightAnswersDiv == 5 || numberOfRightAnswersDiv == 7){
@@ -118,7 +124,7 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
     function gatherFunctions(){
             setRandomNumber();
             livesFunction();
-            spanOneFunction();
+            spanFunction();
         };
       // Events
 
