@@ -49,11 +49,11 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
     <div id="number-of-lives-div"></div>
 
     <div id="number-of-right-answers-div">
-        <p>Antall riktige: 0</p>
+        <p id="number-of-right-answers-p">Antall riktige: 0</p>
     </div>
 
     <div id="number-of-wrong-answers-div">
-        <p>Antall feil: 0</p>
+        <p id="number-of-wrong-answers-p">Antall feil: 0</p>
     </div>    
 
     <div id="output-div">
@@ -68,13 +68,15 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         var numberOfLivesDiv = document.getElementById("number-of-lives-div");
         var numberOfRightAnswersDiv = document.getElementById("number-of-right-answers-div");
         var numberOfWrongAnswersDiv = document.getElementById("number-of-wrong-answers");
+        var numberOfRightAnswersP = document.getElementById("number-of-right-answers-p");
+        var numberOfWrongAnswersP = document.getElementById("number-of-wrong-answers-p");
         var outputDiv = document.getElementById("output-div");
 
         // Variabler
         var randomNumber;
         var image = `<img src="images/person1.jpg">`;
-        var newLife = false;
-       // var numberOfLivesDiv = 5; //Liv brukeren spiller med.
+        //var newLife = false;
+        //var numberOfLivesDiv = 5; //Liv brukeren spiller med.
         var countRight = 0; //Brukeren starter med å ha gjettet null ganger.
         var countWrong = 0;
 
@@ -89,24 +91,20 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
         //Brukeren klikker på en av boksene og det sjekkes om boksen er den riktige.
         function spanOneFunction(){
         if(randomNumber === 1){
-            countRight++
-            numberOfRightAnswersDiv.innerHTML = `<p>Antall riktige: ${countRight}</p>`;
+            numberOfRightAnswersP.innerHTML = `Antall riktige: ${countRight + 1}`;
           //  numberOfLivesDiv + 1;
         }else if(randomNumber === 2){
-            countWrong++
-            numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;
+            numberOfWrongAnswersP.innerHTML = `Antall feil: ${countWrong + 1}`;
            // numberOfLivesDiv - 1;
         }
       };
 
       function spanTwoFunction(){
         if(randomNumber === 2){
-            countRight++
-            numberOfRightAnswersDiv.innerHTML = `<p>Antall riktige: ${countRight}</p>`;
+            numberOfRightAnswersP.innerHTML = `Antall riktige: ${countRight + 1}`;
           //  numberOfLivesDiv ++;
         }else if(randomNumber === 1){
-            countWrong++
-            numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;
+            numberOfWrongAnswersP.innerHTML = `Antall feil: ${countWrong + 1}`;
            // numberOfLivesDiv - 1;
         }
       };
