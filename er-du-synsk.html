@@ -110,6 +110,9 @@ Skjermbilde under: Hvis bruker greier å få 10 poeng (dvs. svare riktig 10 gang
             if(countRight >= 7){
                 numberOfLivesDiv.innerHTML += `${image}`;
             }
+            if(countWrong /*her må en betingelse til*/){
+                numberOfLivesDiv.innerHTML -= `${image}`;
+            }//siste if funker ikke
         };
         //bug: noen ganger får brukeren liv på 4 og 6 riktige...
 
