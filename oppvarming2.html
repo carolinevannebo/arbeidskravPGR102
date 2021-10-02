@@ -12,10 +12,53 @@
     <h3>Klikk på den du tror har en katt!</h3>
     <img id="check-person1-img" src="images/person1.jpg">
     <img id="check-person2-img" src="images/person2.jpg">
-    <div id="output-div">hello</div>
+    <div id="output-div"></div>
 
     <script>
-      
+        var person1 = document.getElementById("check-person1-img");
+        var person2 = document.getElementById("check-person2-img");
+        var outputDiv = document.getElementById("output-div");
+
+        var frog;
+        var cat;
+
+        var randomNumber = Math.floor(Math.random()* 2 + 1)
+
+        function woman(){
+            if(randomNumber == 1){
+                outputDiv.innerHTML = `
+                <h1>Det er riktig! Personen har en katt.</h1><img src="images/cat.jpg">
+                `;
+
+            }else /*if(randomNumber == 2)*/{
+                outputDiv.innerHTML = `
+                <h1>Det er feil! Personen har en frosk.</h1><img src="images/frog.jpg">
+                `;
+            };
+        };
+        
+        function man(){
+            if(randomNumber == 2){
+                outputDiv.innerHTML = `
+                <h1>Det er riktig! Personen har en katt.</h1><img src="images/cat.jpg">
+                `;
+
+            }else /*if(randomNumber == 1)*/{
+                outputDiv.innerHTML = `
+                <h1>Det er feil! Personen har en frosk.</h1><img src="images/frog.jpg">
+                `;
+
+            };
+        };
+        
+        function gatherFunctions(){
+            woman();
+            man();
+        };
+
+        person1.onclick = gatherFunctions;
+        person2.onclick = gatherFunctions;
+
     </script>
 
 </body>
