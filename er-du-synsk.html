@@ -61,11 +61,13 @@
                 outputDiv.innerHTML = `
                 <p>Antall riktige: ${countRight}</p>;
                 `;
+                outputDiv.innerHTML = "Riktig svar.";
             }else{
                 countWrong++
                 outputDiv.innerHTML = `
                 <p>Antall feil: ${countWrong}</p>;
                 `;
+                outputDiv.innerHTML = "Feil svar.";
     
             };
 
@@ -73,7 +75,7 @@
 
         function lives(){
             numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
-            if(countRight >= 3 && countRight >= 5 && countRight >= 7){
+            if(countRight >= 3 || countRight >= 5 || countRight >= 7){
                 numberOfLivesDiv.innerHTML += `${image}`;
             }
         };
