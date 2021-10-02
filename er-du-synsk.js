@@ -21,13 +21,13 @@
     //Hovedfunksjon som kjøres ved event.
     function gatherFunctions(){
         if(randomNumber() === 1) { //Setter en av de to boksene tilfeldig som den riktige.
-            score++;               //Score teller.
+            score++;               //Poengsum teller.
             if(score === 3 | score === 5 | score === 7) { //Dersom brukeren får 3, 5, 7 i score, vil brukeren få ett liv til.
-                numberOfLives++;   //Antall liv teller.
+                numberOfLives++;   //Teller antall liv.
             }
             countRight++        //Antall ganger gjettet riktig teller.
         }else{                  //Hvis ikke vil brukeren miste liv per gang feil gjettet.
-            numberOfLives--;    //Ellets mister brukeren liv.
+            numberOfLives--;    //Ellers mister brukeren liv.
             countWrong++;       //Pga. at brukeren gjettet feil.
         }
         numberOfLivesDiv.innerHTML = "";
@@ -63,5 +63,3 @@
     }
     
     initGame(); //Kjør funksjon
-
-    
