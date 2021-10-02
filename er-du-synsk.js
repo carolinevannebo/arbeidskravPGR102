@@ -12,12 +12,12 @@
     let countWrong = 0;     //Brukeren starter med å ha gjettet null ganger.
     let score = 0;          //Brukeren starter med å ha oppnådd null i score.
     let numberOfLives = 5;  //Brukeren starter med å ha fem liv.
-        
+
 // Funksjoner
     function randomNumber() { //Math.random brukes for å sette en av de to boksene som den riktige.
         return Math.floor(Math.random() * 2 + 1);
     };
-     
+
     //Funksjon som teller riktig/feil gjettet, og hvor mange liv brukeren har.
     function gatherFunctions(){
         if(randomNumber() === 1) { //Setter en av de to boksene tilfeldig som den riktige.
