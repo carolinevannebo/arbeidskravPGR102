@@ -8,7 +8,7 @@
 
 // Variabler
     var randomNumber;
-    var image = `<img src="images/person1.jpg">`;
+    var image = `<img src="/.images/person1.jpg">`;
     var countRight = 0; //Brukeren starter med å ha gjettet null ganger.
     var countWrong = 0;
 
@@ -43,12 +43,16 @@
         }
         if(countRight >= 7){
             numberOfLivesDiv.innerHTML += `${image}`;
-        }/*
-            if(countWrong += 1){
-                numberOfLivesDiv.innerHTML -= `${image}`;
-            }*/
-        };
+        }
+    };
     //bug: noen ganger får brukeren liv på 4 og 6 riktige... fordi bildene oppdateres før count.
+
+    /*var livesLeft = [`${image}${image}${image}${image}${image}`];
+    var arrayLength = livesLeft.length;
+    for (var i = 5; i < arrayLength; i++) {
+        console.log(arrayLength[i]);
+    //Do something
+    }*/
 
     function win(){
         if(countRight === 10){
@@ -76,9 +80,8 @@
         lose();
     };
 // Events
-
     //To click events for å kjøre hovedfunksjon.
-    boxOneDiv.addEventListener("click", gatherFunctions)
-    boxTwoDiv.addEventListener("click", gatherFunctions)
+    boxOneDiv.addEventListener("click", gatherFunctions);
+    boxTwoDiv.addEventListener("click", gatherFunctions);
 
     
