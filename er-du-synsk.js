@@ -18,17 +18,17 @@
         return Math.floor(Math.random() * 2 + 1);
     };
      
-    //Hovedfunksjon som kjøres ved event.
+    //Funksjon som teller riktig/feil gjettet, og hvor mange liv brukeren har.
     function gatherFunctions(){
         if(randomNumber() === 1) { //Setter en av de to boksene tilfeldig som den riktige.
             score++;               //Poengsum teller.
             if(score === 3 | score === 5 | score === 7) { //Dersom brukeren får 3, 5, 7 i score, vil brukeren få ett liv til.
                 numberOfLives++;   //Teller antall liv.
             }
-            countRight++        //Antall ganger gjettet riktig teller.
-        }else{                  //Hvis ikke vil brukeren miste liv per gang feil gjettet.
-            numberOfLives--;    //Ellers mister brukeren liv.
-            countWrong++;       //Pga. at brukeren gjettet feil.
+            countRight++            //Antall ganger gjettet riktig teller.
+        }else{                      //Hvis ikke vil brukeren miste liv per gang feil gjettet.
+            numberOfLives--;        //Ellers mister brukeren liv.
+            countWrong++;           //Pga. at brukeren gjettet feil.
         }
         numberOfLivesDiv.innerHTML = "";
 
@@ -39,16 +39,16 @@
         numberOfRightAnswersDiv.innerHTML = `<p>Antall riktige: ${countRight}</p>`; //Skriver ut antall ganger gjettet riktig.
         numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;    //Skriver ut antall ganger gjettet feil.
 
-        if(score === 10) {      //if-funksjon som avgjør at brukeren har vunnet spillet
+        if(score === 10) {      //if-funksjon som avgjør at brukeren har vunnet spillet.
             alert("You win!");
         }
-
-        if(numberOfLives === -1 ) { //if-funksjon som avgjør at brukeren har tapt spillet
+        if(numberOfLives === -1 ) { //if-funksjon som avgjør at brukeren har tapt spillet.
             alert("You lose!")
         }
     };
+
 // Events
-    function initGame() { //Main-funksjon som starter spillet
+    function initGame() { //Main-funksjon som starter spillet.
 
         //console.log(`NumberOfLives=${numberOfLives}`);
         //console.log(`Score=${score}`);
@@ -59,7 +59,5 @@
         }
         boxOneDiv.addEventListener("click", gatherFunctions);
         boxTwoDiv.addEventListener("click", gatherFunctions);
-    
     }
-    
-    initGame(); //Kjør funksjon
+    initGame(); //Kjør funksjon.
