@@ -7,56 +7,51 @@
     const outputDiv = document.getElementById("output-div");
 
 // Variabler
-    //var randomNumber;
     const image = `<img src="images/person1.jpg">`;
-    let countRight = 0; //Brukeren starter med å ha gjettet null ganger.
-    let countWrong = 0;
-    let score = 0;
-    let numberOfLives = 5;
+    let countRight = 0;     //Brukeren starter med å ha gjettet null ganger.
+    let countWrong = 0;     //Brukeren starter med å ha gjettet null ganger.
+    let score = 0;          //Brukeren starter med å ha oppnådd null i score.
+    let numberOfLives = 5;  //Brukeren starter med å ha fem liv.
         
 // Funksjoner
-
-    function randomNumber() {
+    function randomNumber() { //Math.random brukes for å sette en av de to boksene som den riktige.
         return Math.floor(Math.random() * 2 + 1);
     };
-    const gameClicks = ["string1" , "string2"];
-    gameClicks.pop()
-    gameClicks.push()
      
     //Hovedfunksjon som kjøres ved event.
     function gatherFunctions(){
         if(randomNumber() === 1) { //Setter en av de to boksene tilfeldig som den riktige.
-            score++;
-            if(score === 3 | score === 5 | score === 7) {
-                numberOfLives++;
+            score++;               //Score teller.
+            if(score === 3 | score === 5 | score === 7) { //Dersom brukeren får 3, 5, 7 i score, vil brukeren få ett liv til.
+                numberOfLives++;   //Antall liv teller.
             }
-            countRight++
-        }else{
-            numberOfLives--;
-            countWrong++;
+            countRight++        //Antall ganger gjettet riktig teller.
+        }else{                  //Hvis ikke vil brukeren miste liv per gang feil gjettet.
+            numberOfLives--;    //Ellets mister brukeren liv.
+            countWrong++;       //Pga. at brukeren gjettet feil.
         }
         numberOfLivesDiv.innerHTML = "";
 
-        for (let i=0; i< numberOfLives; i++) {
+        for (let i=0; i< numberOfLives; i++) {          //Løkke som legger til bilde.
             numberOfLivesDiv.innerHTML += `${image}`;
         }
 
-        numberOfRightAnswersDiv.innerHTML = `<p>Antall riktige: ${countRight}</p>`;
-        numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;
+        numberOfRightAnswersDiv.innerHTML = `<p>Antall riktige: ${countRight}</p>`; //Skriver ut antall ganger gjettet riktig.
+        numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;    //Skriver ut antall ganger gjettet feil.
 
-        if(score === 10) {
+        if(score === 10) {      //if-funksjon som avgjør at brukeren har vunnet spillet
             alert("You win!");
         }
 
-        if(numberOfLives === -1 ) {
+        if(numberOfLives === -1 ) { //if-funksjon som avgjør at brukeren har tapt spillet
             alert("You lose!")
         }
     };
 // Events
-    function initGame() {
+    function initGame() { //Main-funksjon som starter spillet
 
-        console.log(`NumberOfLives=${numberOfLives}`);
-        console.log(`Score=${score}`);
+        //console.log(`NumberOfLives=${numberOfLives}`);
+        //console.log(`Score=${score}`);
     
         numberOfLivesDiv.innerHTML ="";
         for (let i=0; i< numberOfLives; i ++) {
@@ -67,6 +62,6 @@
     
     }
     
-    initGame();
+    initGame(); //Kjør funksjon
 
     
