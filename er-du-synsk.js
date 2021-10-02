@@ -8,7 +8,7 @@
 
 // Variabler
     var randomNumber;
-    var image = `<img src="/.images/person1.jpg">`;
+    var image = `<img src="images/person1.jpg">`;
     var countRight = 0; //Brukeren starter med å ha gjettet null ganger.
     var countWrong = 0;
 
@@ -23,10 +23,12 @@
     //Brukeren klikker på en av boksene og det sjekkes om boksen er den riktige.
     function spanFunction(){
         outputDiv.innerHTML = ""; //fjerner spill-instruksjonene så fort brukeren begynner spillet
+        numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`; //liv brukeren har igjen
+
         if(randomNumber === 1){
             countRight++
             numberOfRightAnswersDiv.innerHTML = `<p>Antall riktige: ${countRight}</p>`;
-        }else{
+        }else if(randomNumber === 2){
             countWrong++
             numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;
         }
@@ -34,7 +36,6 @@
       
     //Hvor mange liv personen har igjen, starter med 5, mister ett per feil, får ett ved 3, 5 og 7 riktige.
     function livesFunction(){
-        numberOfLivesDiv.innerHTML === `${image}${image}${image}${image}${image}`;
         if(countRight >= 3){
             numberOfLivesDiv.innerHTML += `${image}`;
         }
