@@ -7,7 +7,7 @@
     var outputDiv = document.getElementById("output-div");
 
 // Variabler
-    var randomNumber;
+    //var randomNumber;
     var image = `<img src="images/person1.jpg">`;
     var countRight = 0; //Brukeren starter med å ha gjettet null ganger.
     var countWrong = 0;
@@ -16,21 +16,22 @@
 // Funksjoner
 
     //Setter en av de to boksene tilfeldig som den riktige.
-    function setRandomNumber(){
-        randomNumber = Math.floor(Math.random() * 2 + 1);
+    function randomNumber(){
+        return Math.floor(Math.random() * 2 + 1);
     };
 
     //Brukeren klikker på en av boksene og det sjekkes om boksen er den riktige.
     function spanFunction(){
-        outputDiv.innerHTML = ""; //fjerner spill-instruksjonene så fort brukeren begynner spillet
         numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`; //liv brukeren har igjen
 
-        if(randomNumber === 1){
+        if(randomNumber() === 1){
             countRight++
             numberOfRightAnswersDiv.innerHTML = `<p>Antall riktige: ${countRight}</p>`;
-        }else if(randomNumber === 2){
+            outputDiv.innerHTML = "Riktig svar.";
+        }else{
             countWrong++
             numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;
+            outputDiv.innerHTML = "Feil svar.";
         }
     };
       
@@ -74,7 +75,7 @@
         
     //Hovedfunksjon som kjøres ved event.
     function gatherFunctions(){
-        setRandomNumber();
+        //randomNumber();
         livesFunction();
         spanFunction();
         win();
