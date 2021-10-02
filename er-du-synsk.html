@@ -36,16 +36,77 @@
     <script>
         
         //HTML-objekter
+        var box1Div = document.getElementById("box1-div");
+        var box2Div = document.getElementById("box2-div");
         var numberOfLivesDiv = document.getElementById("number-of-lives-span");
         var numberOfRightAnswers = document.getElementById("number-of-right-answers");
         var numberOfWrongAnswers = document.getElementById("number-of-wrong-answers");
         var outputDiv = document.getElementById("output-div");
 
         // Variabler
-        
-        // Funksjoner
+        var randomNumber;
+        var image = `<img src="images/person1.jpg>`;
+        var countRight = 0;
+        var countWrong = 0;
 
+        // Funksjoner
+        function setRandomNumber(){ /*Setter en av boksene tilfeldig som riktig*/
+            randomNumber = Math.floor(Math.random()* 2 + 1)
+        };
+
+        function span(){ /*Brukern klikker på en av boksene og sjekker hvem som er riktig*/
+            outputDiv.innerHTML = "";
+            if(randomNumber === 1){
+                countRight++
+                outputDiv.innerHTML = `
+                <p>Antall riktige: ${countRight}</p>;
+                `;
+            }else{
+                countWrong++
+                outputDiv.innerHTML = `
+                <p>Antall feil: ${countWrong}</p>;
+                `;
+    
+            };
+
+        }
+
+        function lives(){
+            numberOfLivesDiv.innerHTML = `${image}${image}${image}${image}${image}`;
+            if(countRight >= 3 && countRight >= 5 && countRight >= 7){
+                numberOfLivesDiv.innerHTML += `${image}`;
+            }
+        };
+
+        function win(){
+            if(countRight === 10){
+                box1Div.innerHTML = "";
+                box2Div.innerHTML = "";
+                numberOfLivesDiv.innerHTML = "";
+                numberOfRightAnswers.innerHTML = "";
+                numberOfWrongAnswers.innerHTML = "";
+                alert("Gratulerer! Du vant spillet.")
+            }
+        };
+
+        function lose(){
+            if(numberOfLivesDiv = ""){
+                alert("Beklager, du har ikke flere liv igjen.")
+            }
+
+        };
+
+        function gatherFunctions(){
+            setRandomNumber();
+            span();
+            lives();
+            win();
+            lose();
+        }
         // Events
+        
+        box1Div.onclick = gatherFunctions;
+        box2Div.onclick = gatherFunctions;
 
     </script>
 
