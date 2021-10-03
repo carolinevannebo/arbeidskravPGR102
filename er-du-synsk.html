@@ -33,71 +33,69 @@
         <p>Klikk på en av boksene for å begynne spillet</p>            
     </div>
 
-    <script>
-        
+    <script src="er-du-synsk.js">
         //HTML-objekter
-        const box1Div = document.getElementById("box1-div");
-        const box2Div = document.getElementById("box2-div");
-        const numberOfLivesDiv = document.getElementById("number-of-lives-div");
-        const numberOfRightAnswersDiv = document.getElementById("number-of-right-answers-div");
-        const numberOfWrongAnswersDiv = document.getElementById("number-of-wrong-answers-div");
-        const outputDiv = document.getElementById("output-div");
+const box1Div = document.getElementById("box1-div");
+const box2Div = document.getElementById("box2-div");
+const numberOfLivesDiv = document.getElementById("number-of-lives-div");
+const numberOfRightAnswersDiv = document.getElementById("number-of-right-answers-div");
+const numberOfWrongAnswersDiv = document.getElementById("number-of-wrong-answers-div");
+const outputDiv = document.getElementById("output-div");
 
-        // Variabler
-        const image = `<img src="images/person1.jpg>`;
-        let countRight = 0;
-        let countWrong = 0;
-        let score = 0;
-        let numberOfLives = 5;
+// Variabler
+const image = `<img src="images/person1.jpg>`;
+let countRight = 0;
+let countWrong = 0;
+let score = 0;
+let numberOfLives = 5;
 
-        // Funksjoner
-        function randomNumber(){ /*Setter en av boksene tilfeldig som riktig*/
-            return Math.floor(Math.random()* 2 + 1)
-        };
+// Funksjoner
+    function randomNumber(){ /*Setter en av boksene tilfeldig som riktig*/
+    return Math.floor(Math.random()* 2 + 1)
+    };
 
-        function gatherFunctions(){ /*Brukern klikker på en av boksene og sjekker hvem som er riktig*/
-            if(randomNumber() === 1){
-                score++;
-                if(score === 3 | score === 5 | score === 7){
-                    numberOfLives++;
-                }
-                countRight++;
-            }else{
-                numberOfLives--;
-                countWrong++;
-    
-            numberOfLivesDiv.innerHTML = "";
-    
-            for(let i = 0; i < numberOfLives; i++){
-                numberOfLivesDiv.innerHTML += `${image}`;
+    function gatherFunctions(){ /*Brukern klikker på en av boksene og sjekker hvem som er riktig*/
+        if(randomNumber() === 1){
+        score++;
+        if(score === 3 | score === 5 | score === 7){
+            numberOfLives++;
+        }
+        countRight++;
+        }else{
+        numberOfLives--;
+        countWrong++;
 
-            }
+    numberOfLivesDiv.innerHTML = "";
 
-            numberOfRightAnswersDiv.innerHTML = `Antall riktige; ${countRight}`;
-            numberOfWrongAnswersDiv.innerHTML = `Antall feil: ${countWrong}`;
-        
-            if(score === 10){
-                alert("Gratulerer! Du vant spillet.")
-            }
-      
-            if(numberOfLives === -1){
-                alert("Beklager, du har ikke flere liv igjen.")
-            }
+    for(let i = 0; i < numberOfLives; i++){
+        numberOfLivesDiv.innerHTML += `${image}`;
 
-        };
+    }
 
-        // Events
-        function initGame(){
-            numberOfLivesDiv.innerHTML = "";
-            for(let i = 0; i < numberOfLives; i++){
-                numberOfLivesDiv.innerHTML += `${image}`;
-            }
-        box1Div.addEventListener("click", gatherFunctions);
+    numberOfRightAnswersDiv.innerHTML = `Antall riktige; ${countRight}`;
+    numberOfWrongAnswersDiv.innerHTML = `Antall feil: ${countWrong}`;
+
+    if(score === 10){
+        alert("Gratulerer! Du vant spillet.")
+    }
+
+    if(numberOfLives === -1){
+        alert("Beklager, du har ikke flere liv igjen.")
+    }
+
+    };
+
+// Events
+    function initGame(){
+        numberOfLivesDiv.innerHTML = "";
+        for(let i = 0; i < numberOfLives; i++){
+        numberOfLivesDiv.innerHTML += `${image}`;
+     }
+    box1Div.addEventListener("click", gatherFunctions);
         box2Div.addEventListener("click", gatherFunctions);
     }
-        initGame();
+    initGame();
     }
-
 
     </script>
 
