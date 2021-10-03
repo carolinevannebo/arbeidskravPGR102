@@ -32,7 +32,7 @@
         }
         numberOfLivesDiv.innerHTML = "";
 
-        for (let i=0; i< numberOfLives; i++) {          //Løkke som legger til bilde.
+        for (let i=0; i < numberOfLives; i++) {          //Løkke som legger til bilde.
             numberOfLivesDiv.innerHTML += `${image}`;
         }
 
