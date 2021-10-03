@@ -25,7 +25,7 @@
             if(score === 3 | score === 5 | score === 7) { //Dersom brukeren får 3, 5, 7 i score, vil brukeren få ett liv til.
                 numberOfLives++;   //Teller antall liv.
             }
-            countRight++            //Antall ganger gjettet riktig teller.
+            countRight++;           //Antall ganger gjettet riktig teller.
         }else{                      //Hvis ikke vil brukeren miste liv per gang feil gjettet.
             numberOfLives--;        //Ellers mister brukeren liv.
             countWrong++;           //Pga. at brukeren gjettet feil.
@@ -54,7 +54,7 @@
         //console.log(`Score=${score}`);
     
         numberOfLivesDiv.innerHTML ="";
-        for (let i=0; i< numberOfLives; i ++) {
+        for (let i=0; i < numberOfLives; i ++) {
             numberOfLivesDiv.innerHTML += `${image}`;
         }
         boxOneDiv.addEventListener("click", gatherFunctions);
