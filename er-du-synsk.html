@@ -36,12 +36,12 @@
     <script>
         
         //HTML-objekter
-        var box1Div = document.getElementById("box1-div");
-        var box2Div = document.getElementById("box2-div");
-        var numberOfLivesDiv = document.getElementById("number-of-lives-div");
-        var numberOfRightAnswers = document.getElementById("number-of-right-answers-div");
-        var numberOfWrongAnswers = document.getElementById("number-of-wrong-answers-div");
-        var outputDiv = document.getElementById("output-div");
+        const box1Div = document.getElementById("box1-div");
+        const box2Div = document.getElementById("box2-div");
+        const numberOfLivesDiv = document.getElementById("number-of-lives-div");
+        const numberOfRightAnswersDiv = document.getElementById("number-of-right-answers-div");
+        const numberOfWrongAnswersDiv = document.getElementById("number-of-wrong-answers-div");
+        const outputDiv = document.getElementById("output-div");
 
         // Variabler
         const image = `<img src="images/person1.jpg>`;
@@ -92,8 +92,8 @@
             for(let i = 0; i < numberOfLives; i++){
                 numberOfLivesDiv.innerHTML += `${image}`;
             }
-        box1Div.addEventListener("click", gatherFunctions)
-        box2Div.addEventListener("click", gatherFunctions)
+        box1Div.addEventListener("click", gatherFunctions);
+        box2Div.addEventListener("click", gatherFunctions);
     }
         initGame();
     }
