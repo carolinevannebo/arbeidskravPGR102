@@ -76,8 +76,8 @@
     function initGame(){ //Funksjon som starter spillet.
         setDifficulty(); //Tilleggsfunksjon
 
-        //console.log(`NumberOfLives = ${numberOfLives}`);
-        //console.log(`Score = ${score}`);
+        console.log(`NumberOfLives = ${numberOfLives}`);
+        console.log(`Score = ${score}`);
     
         numberOfLivesDiv.innerHTML ="";
         for (let i=0; i < numberOfLives; i++){
@@ -88,7 +88,7 @@
     }
     initGame(); //Kjør spillet.
 
-    //Kommentar til meg selv: kan vel ta bort score nå? trenger ikke logge den mer? eller?
+
 
     //tilleggsfunksjon: brukeren kan bestemme vanskelighetsgrad ved å skrive/velge hvor mange liv de vil ha.
     //      - dette kan ordnes med f.eks en prompt hvor let numberOfLives = verdien til prompt,
