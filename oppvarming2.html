@@ -23,6 +23,43 @@
     <div id="output-div"></div>
 
     <script>
+      var person1 = document.getElementById("check-person1-img");
+      var person2 = document.getElementById("check-person2-img");
+      var outputDiv = document.getElementById("output-div");
+
+      var frog = `frog.jpg`
+      var cat = `cat.jpg`
+
+      var randomNumber = Math.floor(Math.random() * 2 + 1);
+
+      function lady(){
+        if(randomNumber === 1){
+          outputDiv.innerHTML = 
+          `<h1>Riktig!</h1><img src="images/${cat}">`
+        }else if(randomNumber === 2){
+          outputDiv.innerHTML =
+          `<h1>Feil!</h1><img src="images/${frog}">`
+        }
+      };
+
+      function man(){
+        if(randomNumber === 2){
+          outputDiv.innerHTML =
+          `<h1>Riktig!</h1><img src="images/${cat}">`
+        }else if(randomNumber === 1){
+          outputDiv.innerHTML =
+          `<h1>Feil!</h1><img src="images/${frog}">`
+        }
+      };
+
+      function gatherFunctions(){
+        lady();
+        man();
+      };
+
+      person1.onclick = gatherFunctions;
+      person2.onclick = gatherFunctions;
+      
       
     </script>
 
