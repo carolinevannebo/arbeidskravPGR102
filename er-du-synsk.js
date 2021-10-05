@@ -80,7 +80,7 @@
         //console.log(`Score = ${score}`);
     
         numberOfLivesDiv.innerHTML ="";
-        for (let i=0; i < numberOfLives; i ++){
+        for (let i=0; i < numberOfLives; i++){
             numberOfLivesDiv.innerHTML += `${image}`;
         }
         boxOneDiv.addEventListener("click", gatherFunctions);
