@@ -52,8 +52,7 @@
         numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;    //Skriver ut antall ganger gjettet feil.
 
         if(score === 10){      //if-funksjon som avgjør at brukeren har vunnet spillet.
-            alert("You win!");
-            //her må vi fikse noe mer spennende.
+            outputDiv.innerHTML = `<p>DU VANT!</p><img src="images/fireworks.jpg">`;
         }
         if(numberOfLives === -1){ //if-(tilleggs)funksjon som avgjør at brukeren har tapt spillet.
             alert("GAME OVER");
