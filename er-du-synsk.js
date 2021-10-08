@@ -52,11 +52,22 @@
         numberOfWrongAnswersDiv.innerHTML = `<p>Antall feil: ${countWrong}</p>`;    //Skriver ut antall ganger gjettet feil.
 
         if(score === 10){      //if-funksjon som avgjør at brukeren har vunnet spillet.
-            outputDiv.innerHTML = `<p>DU VANT!</p><img src="images/fireworks.jpg">`;
+            boxOneDiv.innerHTML = "";
+            boxOneDiv.style.width = '0';
+            boxOneDiv.style.height = '0';
+            boxOneDiv.style.border = '0';
+            boxTwoDiv.innerHTML = "";
+            boxTwoDiv.style.width = '0';
+            boxTwoDiv.style.height = '0';
+            boxTwoDiv.style.border = '0';
+            numberOfLivesDiv.innerHTML = "";
+            numberOfRightAnswersDiv.innerHTML = "";
+            numberOfWrongAnswersDiv.innerHTML = "";
+            outputDiv.innerHTML = `<p>GRATULERER, DU VANT!</p><img src="images/fireworks.jpg">`;
         }
         if(numberOfLives === -1){ //if-(tilleggs)funksjon som avgjør at brukeren har tapt spillet.
             alert("GAME OVER");
-            //her må vi fikse noe mer spennende.
+            //her kunne vi fikset noe mer spennende.
         }
     };
 
